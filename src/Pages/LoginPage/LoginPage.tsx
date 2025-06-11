@@ -1,8 +1,8 @@
-import React from "react";
 import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useAuth } from "../../Context/useAuth";
 import { useForm } from "react-hook-form";
+import { Link } from "react-router";
 
 type Props = {};
 
@@ -27,6 +27,7 @@ const LoginPage = (props: Props) => {
   const handleLogin = (form: LoginFormsInputs) => {
     loginUser(form.userName, form.password);
   };
+
   return (
     <section className="bg-white min-h-screen flex items-center justify-center px-6 py-8">
       <div className="w-full max-w-md bg-white rounded-md shadow-md">
@@ -83,14 +84,6 @@ const LoginPage = (props: Props) => {
                 </p>
               )}
             </div>
-            <div className="flex justify-end">
-              <a
-                href="#"
-                className="text-sm font-medium text-blue-600 hover:underline"
-              >
-                Forgot password?
-              </a>
-            </div>
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-2.5 text-sm font-semibold hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 rounded-none transition"
@@ -99,9 +92,9 @@ const LoginPage = (props: Props) => {
             </button>
             <p className="text-center text-sm text-gray-700">
               Don’t have an account yet?{" "}
-              <a href="#" className="font-medium text-blue-600 hover:underline">
+              <Link to="/register" className="font-medium text-blue-600 hover:underline">
                 Sign up
-              </a>
+              </Link>
             </p>
           </form>
         </div>

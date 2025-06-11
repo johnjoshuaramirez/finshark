@@ -10,17 +10,8 @@ const Navbar = (props: Props) => {
     <nav className="bg-white border-b border-gray-300 shadow-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
         <Link to="/">
-          <img src={logo} alt="Logo" className="h-8" />
+          <h1 className="font-bold">Finshark</h1>
         </Link>
-
-        <div className="hidden lg:flex font-semibold text-gray-900">
-          <Link
-            to="/search"
-            className="inline-block px-4 py-2 border border-gray-300 text-gray-900 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 rounded-none min-w-[250px] text-center"
-          >
-            Search
-          </Link>
-        </div>
 
         {isLoggedIn() ? (
           <div className="hidden lg:flex items-center space-x-8 text-gray-900 font-medium">
